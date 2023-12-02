@@ -6,7 +6,7 @@ from local_config import DATABASE_CONFIG
 app = Flask(__name__)
 
 app.config['SQL_ALCHEMY_DATABASE_URI'] = DATABASE_CONFIG
-db = SQLAlchemy()
+db = SQLAlchemy(app)
 
 with app.app_context():
     db.create_all()
